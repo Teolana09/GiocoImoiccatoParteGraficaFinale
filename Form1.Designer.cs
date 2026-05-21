@@ -30,8 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             label1 = new Label();
-            button1 = new Button();
-            textBox7 = new TextBox();
+            BottoneJolly = new Button();
             textBox5 = new TextBox();
             BottonePSemplici = new Button();
             BottonePMedie = new Button();
@@ -50,6 +49,10 @@
             LBLtentativi = new Label();
             lblPerso = new Label();
             lblinizio = new Label();
+            txtInsertP = new TextBox();
+            BottonInsertP = new Button();
+            lbljollyUsato = new Label();
+            tTentativi = new Label();
             SuspendLayout();
             // 
             // label1
@@ -60,23 +63,15 @@
             label1.Size = new Size(0, 15);
             label1.TabIndex = 1;
             // 
-            // button1
+            // BottoneJolly
             // 
-            button1.Location = new Point(32, 72);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 4;
-            button1.Text = "Jolly";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(32, 152);
-            textBox7.Multiline = true;
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(78, 23);
-            textBox7.TabIndex = 10;
-            textBox7.Text = "TENTATIVI";
+            BottoneJolly.Location = new Point(32, 72);
+            BottoneJolly.Name = "BottoneJolly";
+            BottoneJolly.Size = new Size(75, 23);
+            BottoneJolly.TabIndex = 4;
+            BottoneJolly.Text = "Jolly";
+            BottoneJolly.UseVisualStyleBackColor = true;
+            BottoneJolly.Click += button1_Click;
             // 
             // textBox5
             // 
@@ -206,25 +201,28 @@
             // LBLparolaErrata
             // 
             LBLparolaErrata.AutoSize = true;
-            LBLparolaErrata.Location = new Point(259, 159);
+            LBLparolaErrata.Font = new Font("Segoe UI", 20F);
+            LBLparolaErrata.Location = new Point(167, 174);
             LBLparolaErrata.Name = "LBLparolaErrata";
-            LBLparolaErrata.Size = new Size(0, 15);
+            LBLparolaErrata.Size = new Size(0, 37);
             LBLparolaErrata.TabIndex = 26;
             // 
             // lblVittoria
             // 
             lblVittoria.AutoSize = true;
-            lblVittoria.Location = new Point(190, 175);
+            lblVittoria.Font = new Font("Segoe UI", 30F);
+            lblVittoria.Location = new Point(132, 176);
             lblVittoria.Name = "lblVittoria";
-            lblVittoria.Size = new Size(0, 15);
+            lblVittoria.Size = new Size(0, 54);
             lblVittoria.TabIndex = 27;
             // 
             // LBLtentativi
             // 
             LBLtentativi.AutoSize = true;
-            LBLtentativi.Location = new Point(32, 192);
+            LBLtentativi.Font = new Font("Segoe UI", 15F);
+            LBLtentativi.Location = new Point(32, 189);
             LBLtentativi.Name = "LBLtentativi";
-            LBLtentativi.Size = new Size(0, 15);
+            LBLtentativi.Size = new Size(0, 28);
             LBLtentativi.TabIndex = 28;
             // 
             // lblPerso
@@ -242,7 +240,42 @@
             lblinizio.Name = "lblinizio";
             lblinizio.Size = new Size(462, 15);
             lblinizio.TabIndex = 30;
-            lblinizio.Text = "PAPERE prima inserisci la difficoltà poi la categoria e divertiti ricarad hai solo 5 tentativi";
+            lblinizio.Text = "PAPERE prima inserisci la difficoltà poi la categoria e divertiti ricarda hai solo 5 tentativi";
+            // 
+            // txtInsertP
+            // 
+            txtInsertP.Location = new Point(491, 245);
+            txtInsertP.Name = "txtInsertP";
+            txtInsertP.Size = new Size(237, 23);
+            txtInsertP.TabIndex = 31;
+            // 
+            // BottonInsertP
+            // 
+            BottonInsertP.Location = new Point(491, 293);
+            BottonInsertP.Name = "BottonInsertP";
+            BottonInsertP.Size = new Size(121, 25);
+            BottonInsertP.TabIndex = 32;
+            BottonInsertP.Text = "Inserisci Parola";
+            BottonInsertP.UseVisualStyleBackColor = true;
+            BottonInsertP.Click += BottonInsertP_Click;
+            // 
+            // lbljollyUsato
+            // 
+            lbljollyUsato.AutoSize = true;
+            lbljollyUsato.Location = new Point(32, 109);
+            lbljollyUsato.Name = "lbljollyUsato";
+            lbljollyUsato.Size = new Size(0, 15);
+            lbljollyUsato.TabIndex = 33;
+            // 
+            // tTentativi
+            // 
+            tTentativi.AutoSize = true;
+            tTentativi.Font = new Font("Segoe UI", 15F);
+            tTentativi.Location = new Point(32, 152);
+            tTentativi.Name = "tTentativi";
+            tTentativi.Size = new Size(85, 28);
+            tTentativi.TabIndex = 34;
+            tTentativi.Text = "Tentativi";
             // 
             // Form1
             // 
@@ -250,6 +283,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(740, 443);
+            Controls.Add(tTentativi);
+            Controls.Add(lbljollyUsato);
+            Controls.Add(BottonInsertP);
+            Controls.Add(txtInsertP);
             Controls.Add(lblinizio);
             Controls.Add(lblPerso);
             Controls.Add(LBLtentativi);
@@ -268,8 +305,7 @@
             Controls.Add(BottonePMedie);
             Controls.Add(BottonePSemplici);
             Controls.Add(textBox5);
-            Controls.Add(textBox7);
-            Controls.Add(button1);
+            Controls.Add(BottoneJolly);
             Controls.Add(label1);
             Name = "Form1";
             Text = "Form1";
@@ -280,8 +316,7 @@
 
         #endregion
         private Label label1;
-        private Button button1;
-        private TextBox textBox7;
+        private Button BottoneJolly;
         private TextBox textBox5;
         private Button BottonePSemplici;
         private Button BottonePMedie;
@@ -300,5 +335,9 @@
         private Label LBLtentativi;
         private Label lblPerso;
         private Label lblinizio;
+        private TextBox txtInsertP;
+        private Button BottonInsertP;
+        private Label lbljollyUsato;
+        private Label tTentativi;
     }
 }
